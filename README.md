@@ -116,7 +116,8 @@ scripts/                      # executable entry points
   test_key.py                 # print loaded Google Maps key
 
 data/
-  exports/                    # CSV outputs (gitignored)
+  exports/
+    sample_ranked.csv         # synthetic sample output — see below
 ```
 
 ---
@@ -172,6 +173,14 @@ Single query (`electrician in St. John's NL`), capped at 10 Google detail calls 
 | Opening hours present | +5 |
 
 The mobility weighting reflects the primary revenue driver in the NL territory this project was built for: device plans, hotspots, and field connectivity.
+
+---
+
+## Sample output
+
+[`data/exports/sample_ranked.csv`](data/exports/sample_ranked.csv) contains 15 rows of **synthetic, fictional** businesses — invented names, placeholder phone numbers, `.example` domains, no real place IDs or scraped data. It shows every column the pipeline produces, sorted by `total_score` descending exactly as a real export would be.
+
+Real exports are gitignored (`data/exports/*`) because they contain Google Places API content subject to caching restrictions.
 
 ---
 
